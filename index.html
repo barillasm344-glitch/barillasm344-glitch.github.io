@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>GT CARGO — Soluciones Logísticas en Centroamérica</title>
+  <meta name="description" content="GT CARGO - Transporte Marítimo, Aéreo y Terrestre en Centroamérica. Soluciones logísticas eficientes y seguras.">
+  
+  <!-- Enlace al archivo CSS externo -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- TOPBAR -->
+  <header class="topbar" role="banner" aria-label="Barra superior">
+    <div class="container">
+      <div class="brand">
+        <img src="Logo 3.png" alt="GT Logo" class="logo-mark" aria-hidden="true">
+        <div>
+          <div class="logo-text" aria-label="GT CARGO">GT CARGO</div>
+          <small>Soluciones logísticas en Centroamérica</small>
+        </div>
+      </div>
+
+      <nav class="primary" aria-label="Navegación principal">
+        <div class="link" data-target="#inicio" role="link" tabindex="0">Inicio</div>
+
+        <div class="submenu-wrap" aria-haspopup="true">
+          <div class="link" id="servicesToggle" aria-expanded="false" role="button" tabindex="0">
+            Servicios <span aria-hidden="true">▾</span>
+          </div>
+          <div class="submenu" id="servicesSubmenu" role="menu" aria-hidden="true">
+            <a href="#aereo-maritimo" data-target="#aereo-maritimo" role="menuitem" tabindex="0">
+              <span aria-hidden="true">✈️⚓</span> Aéreo y Marítimo
+            </a>
+          </div>
+        </div>
+
+        <div class="link" data-target="#nosotros" role="link" tabindex="0">Nosotros</div>
+        <div class="link" data-target="#contacto" role="link" tabindex="0">Contacto</div>
+        <div class="link" data-target="#preguntas-frecuentes" role="link" tabindex="0">Preguntas Frecuentes</div>
+        <div class="link" data-target="#cotizacion" role="link" tabindex="0">Cotización</div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" aria-hidden="true">
+    <div class="inner container">
+      <h1>Envío rápido y seguro a través de Centroamérica en las mejores manos.</h1>
+      <p class="lead muted">GT CARGO es una empresa especializada en la importación y exportación de productos a través de Centroamérica. Ofrecemos soluciones logísticas eficientes, seguras y adaptadas a tus necesidades comerciales.</p>
+      <div>
+        <a class="btn" href="#cotizacion" data-target="#cotizacion">
+          Realizar cotización hoy mismo
+          <span aria-hidden="true">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <!-- SECCIÓN INICIO -->
+    <section id="inicio" class="wrapper section active visible" aria-labelledby="servicios-title">
+      <div class="container">
+        <!-- Bloque específico para la página de Inicio -->
+        <div class="card home-block">
+          <h2>Envío rápido y seguro a través de Centroamérica en las mejores manos.</h2>
+          <p>GT CARGO es una empresa especializada en la importación y exportación de productos a través de Centroamérica. Ofrecemos soluciones logísticas eficientes, seguras y adaptadas a tus necesidades comerciales.</p>
+        </div>
+
+        <!-- Misión y Visión -->
+        <div class="mission-vision">
+          <div class="mission">
+            <h3>Misión</h3>
+            <p>Proporcionar soluciones logísticas integrales de alta calidad que conecten Centroamérica con el mundo, garantizando la seguridad, puntualidad y eficiencia en cada envío, mientras superamos las expectativas de nuestros clientes con un servicio personalizado y profesional.</p>
+          </div>
+          <div class="vision">
+            <h3>Visión</h3>
+            <p>Ser la empresa líder en soluciones logísticas en Centroamérica, reconocida por nuestra excelencia operativa, innovación constante y compromiso inquebrantable con la satisfacción del cliente, contribuyendo al crecimiento económico regional.</p>
+          </div>
+        </div>
+
+        <!-- Servicios destacados -->
+        <div class="card">
+          <h2 id="servicios-title" class="section-title">Servicios destacados</h2>
+          <div class="grid" role="list">
+            <article class="service card" role="listitem" aria-labelledby="serv1">
+              <div class="service-icon" aria-hidden="true">⚓</div>
+              <h3 id="serv1">Transporte Marítimo Internacional</h3>
+              <p class="muted">Autorizado</p>
+              <p>Servicio de importación  de productos a través de Centroamérica. Tarifas competitivas y experiencia aduanera.</p>
+              <a class="cta-primary" href="#aereo-maritimo" data-target="#aereo-maritimo">
+                Más información
+                <span aria-hidden="true">→</span>
+              </a>
+            </article>
+
+            <article class="service card" role="listitem" aria-labelledby="serv2">
+              <div class="service-icon" aria-hidden="true">✈️</div>
+              <h3 id="serv2">Transporte Aéreo Centroamericano</h3>
+              <p class="muted">Autorizado</p>
+              <p>Servicio garantizado con rapidez y cobertura superior para entregas urgentes.</p>
+              <a class="cta-primary" href="#aereo-maritimo" data-target="#aereo-maritimo">
+                Más información
+                <span aria-hidden="true">→</span>
+              </a>
+            </article>
+
+            <article class="service card" role="listitem" aria-labelledby="serv4">
+              <div class="service-icon" aria-hidden="true">📦</div>
+              <h3 id="serv4">Logística Integral</h3>
+              <p class="muted">Completo</p>
+              <p>Gestión completa de su cadena de suministro, desde la recolección hasta la entrega final.</p>
+              <a class="cta-primary" href="#aereo-maritimo" data-target="#aereo-maritimo">
+                Más información
+                <span aria-hidden="true">→</span>
+              </a>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN TRANSPORTE AÉREO Y MARÍTIMO -->
+    <section id="aereo-maritimo" class="wrapper section" aria-labelledby="aereo-maritimo-title">
+      <div class="container card">
+        <h2 id="aereo-maritimo-title" class="section-title">Transporte Aéreo y Marítimo</h2>
+        
+        <!-- Carrusel de fotos y videos -->
+       <!-- En la sección de Transporte Aéreo y Marítimo, cambia esto: -->
+
+<div class="carousel">
+  <div class="carousel-inner">
+    <!-- Imagen 1 - Transporte aéreo -->
+    <div class="carousel-item active">
+      <img src="Avion.png" alt="Avión de carga en aeropuerto">
+    </div>
+    
+    <!-- Imagen 2 - Transporte marítimo -->
+    <div class="carousel-item">
+      <img src="Maritimo.png" alt="Contenedores en puerto marítimo">
+    </div>
+    
+    <!-- Imagen 3 - Video -->
+    <div class="carousel-item">
+      <video controls poster="imagenes/video-preview.jpg">
+        <source src="video.mp4" type="video/mp4">
+        Tu navegador no soporta el elemento video.
+      </video>
+    </div>
+  </div>
+  <button class="carousel-nav carousel-prev">‹</button>
+  <button class="carousel-nav carousel-next">›</button>
+  <div class="carousel-controls">
+    <button class="carousel-control active"></button>
+    <button class="carousel-control"></button>
+    <button class="carousel-control"></button>
+  </div>
+</div>
+
+        <h3>Nuestros Servicios</h3>
+        <ul class="service-list">
+          <li>Carga aérea general (FOB, C&F, CIF)</li>
+          <li>Carga aérea modalidad rápida o courier (FOB, C&F, CIF)</li>
+          <li>Carga marítima comercial FCL – contenedor completo (FOB, C&F, CIF)</li>
+          <li>Carga marítima consolidada LCL (FOB, C&F, CIF)</li>
+          <li>Encomiendas sin valor comercial (FOB, C&F, CIF)</li>
+          <li>Operación y Manejo Logístico</li>
+          <li>Tarifas competitivas</li>
+          <li>Manejo seguro y profesional de carga</li>
+          <li>Gestión de Documentos
+            <ul style="margin-left: 20px; margin-top: 8px;">
+              <li>Guías aéreas</li>
+              <li>Bill of Lading</li>
+              <li>Elaboración y trámite de DUCAS (Declaración Única Centroamericana)</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- SECCIÓN NOSOTROS -->
+    <section id="nosotros" class="wrapper section" aria-labelledby="nosotros-title">
+      <div class="container card">
+        <h2 id="nosotros-title" class="section-title">Sobre Nosotros</h2>
+        
+        <h3>SOBRE NOSOTROS </h3>
+        <p>GT CARGO es una empresa especializada en transporte aéreo y marítimo, enfocada en ofrecer soluciones logísticas rápidas, seguras y confiables.</p>
+        
+        <p>Nos caracteriza:</p>
+        <ul class="service-list">
+          <li>Atención al cliente cercana y personalizada.</li>
+          <li>Transparencia en todo el proceso.</li>
+          <li>Manejo cuidadoso y profesional de la carga.</li>
+          <li>Red sólida de agentes y operadores internacionales.</li>
+        </ul>
+        
+        <p>Somos un aliado estratégico para cargas personales y comerciales.</p>
+        
+        <h3>POR QUÉ ELEGIRNOS</h3>
+        <ul class="service-list">
+          <li>Rapidez garantizada: logística optimizada para cumplir tiempos.</li>
+          <li>Seguridad: protocolos estrictos, trazabilidad y manejo responsable.</li>
+          <li>Atención excepcional: acompañamiento cercano y guía en todo el proceso.</li>
+          <li>Profesionalismo: equipo especializado y comprometido.</li>
+        </ul>
+        
+        <h3>CÓMO TRABAJAMOS</h3>
+        <ul class="service-list">
+          <li>Coordinamos la logística completa: recolección/recepción, trámites, documentación y preparación de carga.</li>
+          <li>Cumplimos con entregas puntuales y seguras.</li>
+          <li>Operamos con eficiencia, transparencia y dedicación en cada envío.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- SECCIÓN CONTACTO -->
+    <section id="contacto" class="wrapper section" aria-labelledby="contacto-title">
+      <div class="container card">
+        <h2 id="contacto-title" class="section-title">Contáctanos</h2>
+        
+        <p>Brindamos atención rápida, cercana y personalizada para cotizaciones y consultas.</p>
+        
+        <div class="social-icons">
+          <a href="#" class="social-icon" aria-label="Facebook">f</a>
+          <a href="#" class="social-icon" aria-label="Instagram">ig</a>
+          <a href="#" class="social-icon" aria-label="WhatsApp">w</a>
+        </div>
+        
+        <div style="margin-top: 30px;">
+          <h3>Información de contacto</h3>
+          <p><strong>Correo electrónico:</strong> barillasm344@gmail.com</p>
+          <p><strong>Teléfono:</strong> [________________]</p>
+          <p><strong>Dirección:</strong> [________________]</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN PREGUNTAS FRECUENTES -->
+    <section id="preguntas-frecuentes" class="wrapper section" aria-labelledby="preguntas-frecuentes-title">
+      <div class="container card">
+        <h2 id="preguntas-frecuentes-title" class="section-title">Preguntas Frecuentes</h2>
+        
+        <div class="faq-container">
+          <div class="faq-item">
+            <div class="faq-question">Tipos de carga: personales y comerciales, no peligrosas.</div>
+            <div class="faq-answer">
+              <p>Manejamos tanto cargas personales como comerciales, excluyendo materiales peligrosos o restringidos por normativas internacionales.</p>
+            </div>
+          </div>
+          
+          <div class="faq-item">
+            <div class="faq-question">Tiempos de entrega: dependen del tipo de transporte (aéreo más rápido, marítimo más económico).</div>
+            <div class="faq-answer">
+              <p>Los tiempos de entrega varían según el tipo de transporte seleccionado. El transporte aéreo es más rápido (1-5 días), mientras que el marítimo es más económico pero requiere más tiempo (7-21 días).</p>
+            </div>
+          </div>
+          
+          <div class="faq-item">
+            <div class="faq-question">Documentos necesarios: factura comercial, lista de empaque, identificación, guía aérea o Bill of Lading.</div>
+            <div class="faq-answer">
+              <p>Para procesar su envío necesitamos: factura comercial, lista de empaque detallada, identificación del remitente y destinatario, y la documentación específica según el tipo de transporte (guía aérea para aéreo o Bill of Lading para marítimo).</p>
+            </div>
+          </div>
+          
+          <div class="faq-item">
+            <div class="faq-question">Rastreo: sí, contamos con seguimiento y actualizaciones constantes.</div>
+            <div class="faq-answer">
+              <p>Todos nuestros envíos cuentan con sistema de rastreo en tiempo real. Recibirá actualizaciones constantes sobre el estado de su carga durante todo el proceso de transporte.</p>
+            </div>
+          </div>
+          
+          <div class="faq-item">
+            <div class="faq-question">Cotización: por WhatsApp, correo o formulario web.</div>
+            <div class="faq-answer">
+              <p>Puede solicitar una cotización a través de WhatsApp, correo electrónico o utilizando nuestro formulario web. Le responderemos en un plazo máximo de 24 horas con una cotización detallada.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN COTIZACIÓN -->
+    <section id="cotizacion" class="wrapper section" aria-labelledby="cotizacion-title">
+      <div class="container card">
+        <h2 id="cotizacion-title" class="section-title">Cotización de envío con GT CARGO</h2>
+        <p>Complete el formulario para obtener una cotización instantánea y personalizada para su envío.</p>
+
+        <form id="quoteForm" class="quote-form" aria-label="Formulario de cotización">
+          <div class="form-group">
+            <label for="q_name">Nombre completo *</label>
+            <input type="text" id="q_name" name="name" placeholder="Ingresa tu nombre completo" required>
+          </div>
+          
+          <div class="row">
+            <div class="col">
+              <div class="form-group">
+                <label for="q_email">Correo electrónico *</label>
+                <input type="email" id="q_email" name="email" placeholder="ejemplo@correo.com" required>
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-group">
+                <label for="q_phone">Teléfono *</label>
+                <input type="tel" id="q_phone" name="phone" placeholder="Número de contacto" required>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col">
+              <div class="form-group">
+                <label for="q_origin">País de origen *</label>
+                <select id="q_origin" name="origin" required>
+                  <option value="">Selecciona un país</option>
+                  <option value="Guatemala">Guatemala</option>
+                  <option value="El Salvador">El Salvador</option>
+                  <option value="Honduras">Honduras</option>
+                  <option value="Nicaragua">Nicaragua</option>
+                  <option value="Costa Rica">Costa Rica</option>
+                  <option value="Panamá">Panamá</option>
+                  <option value="Estados Unidos">Estados Unidos</option>
+                </select>
+              </div>
+              <!-- Selección de estado para USA -->
+              <div id="usStateSelection" class="state-selection">
+                <div class="form-group">
+                  <label for="q_origin_state">Estado de origen (USA)</label>
+                  <select id="q_origin_state" name="origin_state">
+                    <option value="">Selecciona un estado</option>
+                    <option value="California">California</option>
+                    <option value="Texas">Texas</option>
+                    <option value="Florida">Florida</option>
+                    <option value="Nueva York">Nueva York</option>
+                    <option value="Illinois">Illinois</option>
+                    <option value="Georgia">Georgia</option>
+                    <option value="Arizona">Arizona</option>
+                    <option value="Washington">Washington</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-group">
+                <label for="q_dest">País de destino *</label>
+                <select id="q_dest" name="destination" required>
+                  <option value="">Selecciona un país</option>
+                  <option value="Guatemala">Guatemala</option>
+                  <option value="El Salvador">El Salvador</option>
+                  <option value="Honduras">Honduras</option>
+                  <option value="Nicaragua">Nicaragua</option>
+                  <option value="Costa Rica">Costa Rica</option>
+                  <option value="Panamá">Panamá</option>
+                  <option value="Estados Unidos">Estados Unidos</option>
+                </select>
+              </div>
+              <!-- Selección de estado para USA -->
+              <div id="usDestStateSelection" class="state-selection">
+                <div class="form-group">
+                  <label for="q_dest_state">Estado de destino (USA)</label>
+                  <select id="q_dest_state" name="dest_state">
+                    <option value="">Selecciona un estado</option>
+                    <option value="California">California</option>
+                    <option value="Texas">Texas</option>
+                    <option value="Florida">Florida</option>
+                    <option value="Nueva York">Nueva York</option>
+                    <option value="Illinois">Illinois</option>
+                    <option value="Georgia">Georgia</option>
+                    <option value="Arizona">Arizona</option>
+                    <option value="Washington">Washington</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col">
+              <div class="form-group">
+                <label for="q_type">Tipo de servicio *</label>
+                <select id="q_type" name="type" required>
+                  <option value="">Selecciona un servicio</option>
+                  <option value="Marítimo">Marítimo</option>
+                  <option value="Aéreo">Aéreo</option>
+                </select>
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-group">
+                <label for="q_weight">Peso aproximado (kg) *</label>
+                <input type="number" id="q_weight" name="weight" placeholder="Ej: 50" min="1" max="10000" required>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col">
+              <div class="form-group">
+                <label for="q_urgency">Urgencia del envío</label>
+                <select id="q_urgency" name="urgency">
+                  <option value="normal">Normal (5-10 días)</option>
+                  <option value="express">Express (2-4 días)</option>
+                  <option value="urgent">Urgente (24-48 horas)</option>
+                </select>
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-group">
+                <label for="q_insurance">Seguro de carga</label>
+                <select id="q_insurance" name="insurance">
+                  <option value="no">Sin seguro</option>
+                  <option value="basic">Básico (1% del valor)</option>
+                  <option value="full">Completo (2% del valor)</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="q_desc">Descripción del producto o carga</label>
+            <textarea id="q_desc" name="description" rows="4" placeholder="Incluye dimensiones, fragilidad, valor aproximado, etc."></textarea>
+          </div>
+
+          <!-- Vista previa de cotización -->
+          <div id="quotePreview" class="quote-preview">
+            <div class="quote-summary">
+              <div>
+                <h3 style="color: var(--accent); margin-bottom: 8px;">Cotización estimada</h3>
+                <p class="muted">Precio basado en los datos proporcionados</p>
+              </div>
+              <div class="quote-price" id="quotePrice">$0.00</div>
+            </div>
+            <div class="quote-details">
+              <div class="quote-detail">
+                <span class="quote-label">Tiempo estimado:</span>
+                <span class="quote-value" id="quoteTime">-</span>
+              </div>
+              <div class="quote-detail">
+                <span class="quote-label">Tipo de servicio:</span>
+                <span class="quote-value" id="quoteService">-</span>
+              </div>
+              <div class="quote-detail">
+                <span class="quote-label">Ruta:</span>
+                <span class="quote-value" id="quoteRoute">-</span>
+              </div>
+            </div>
+            <p class="quote-note">* Esta cotización es una estimación. El precio final puede variar según factores adicionales como impuestos, aranceles y condiciones específicas de la carga.</p>
+          </div>
+
+          <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:20px;">
+            <button type="submit" id="sendQuoteBtn">
+              <span id="btnText">Solicitar cotización formal</span>
+              <span id="btnLoading" class="loading" style="display:none;"></span>
+            </button>
+            <button type="button" class="secondary" id="resetBtn">Limpiar formulario</button>
+            <div id="quoteMsg" class="muted" aria-live="polite" style="min-height:20px"></div>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer role="contentinfo">
+    <div class="footer-inner container">
+      <div class="footer-col">
+        <h3>GT CARGO</h3>
+        <p>Soluciones logísticas integrales para Centroamérica. Transporte marítimo, aéreo y terrestre.</p>
+        <small>© 2025 GT CARGO. Todos los derechos reservados.</small>
+      </div>
+      
+      <div class="footer-col">
+        <h3>Enlaces rápidos</h3>
+        <ul>
+          <li><a href="#inicio" data-target="#inicio">Inicio</a></li>
+          <li><a href="#aereo-maritimo" data-target="#aereo-maritimo">Transporte Aéreo y Marítimo</a></li>
+          <li><a href="#nosotros" data-target="#nosotros">Nosotros</a></li>
+          <li><a href="#preguntas-frecuentes" data-target="#preguntas-frecuentes">Preguntas Frecuentes</a></li>
+          <li><a href="#cotizacion" data-target="#cotizacion">Cotización</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-col">
+        <h3>Contacto</h3>
+        <ul>
+          <li><a href="mailto:info.gtcargo@gmail.com">info.gtcargo@gmail.com</a></li>
+          <li>Tel: 5939 1086 </li>
+          <li>Dirección: Mixco, Guatemala </li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Enlace al archivo JavaScript externo -->
+  <script src="script.js"></script>
+</body>
+</html>
