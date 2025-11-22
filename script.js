@@ -28,20 +28,33 @@ function initMobileFeatures() {
         mobileMenuToggle.addEventListener('click', toggleMenu);
         overlay.addEventListener('click', toggleMenu);
         
-        // Cerrar menú al hacer clic en enlaces
+        // Cerrar menú al hacer clic en enlaces - IMPORTANTE: mantener funcionalidad
         nav.querySelectorAll('.link, .submenu a').forEach(link => {
-            link.addEventListener('click', () => {
-                nav.classList.remove('mobile-open');
-                overlay.classList.remove('mobile-open');
-                document.body.style.overflow = '';
-                
-                // Reset hamburguesa
-                const spans = mobileMenuToggle.querySelectorAll('span');
-                spans[0].style.transform = 'none';
-                spans[1].style.opacity = '1';
-                spans[2].style.transform = 'none';
+            link.addEventListener('click', (e) => {
+                // Permitir que el evento continue para la funcionalidad normal
+                setTimeout(() => {
+                    nav.classList.remove('mobile-open');
+                    overlay.classList.remove('mobile-open');
+                    document.body.style.overflow = '';
+                    
+                    // Reset hamburguesa
+                    const spans = mobileMenuToggle.querySelectorAll('span');
+                    spans[0].style.transform = 'none';
+                    spans[1].style.opacity = '1';
+                    spans[2].style.transform = 'none';
+                }, 300); // Pequeño delay para permitir la navegación
             });
         });
+
+        // Asegurar que el submenú funcione en móviles
+        const servicesToggle = document.getElementById('servicesToggle');
+        if (servicesToggle) {
+            servicesToggle.addEventListener('click', function(e) {
+                e.stopPropagation();
+                // Usar la función existente toggleSubmenu() del código principal
+                toggleSubmenu();
+            });
+        }
     }
 }
 
