@@ -1,10 +1,10 @@
-// ===== FUNCIONALIDAD MÓVIL MEJORADA =====
+// ===== FUNCIONALIDAD MÓVIL MEJORADA - VERSIÓN CORREGIDA =====
 function initMobileFeatures() {
     const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
     const nav = document.querySelector('nav.primary');
     const overlay = document.querySelector('.mobile-overlay');
     
-    // Solo inicializar si estamos en móvil y los elementos existen
+    // Solo inicializar si estamos en móvil
     if (mobileMenuToggle && window.innerWidth <= 768) {
         function toggleMenu() {
             const isOpening = !nav.classList.contains('mobile-open');
@@ -28,10 +28,21 @@ function initMobileFeatures() {
         mobileMenuToggle.addEventListener('click', toggleMenu);
         overlay.addEventListener('click', toggleMenu);
         
-        // Cerrar menú al hacer clic en enlaces - IMPORTANTE: mantener funcionalidad
-        nav.querySelectorAll('.link, .submenu a').forEach(link => {
-            link.addEventListener('click', (e) => {
-                // Permitir que el evento continue para la funcionalidad normal
+        // SOLUCIÓN PARA SUBMENÚ MÓVIL - Event delegation
+        nav.addEventListener('click', function(e) {
+            const target = e.target;
+            
+            // Si se hace clic en "Servicios"
+            if (target.id === 'servicesToggle' || target.closest('#servicesToggle')) {
+                e.stopPropagation();
+                e.preventDefault();
+                toggleSubmenu();
+                return;
+            }
+            
+            // Si se hace clic en cualquier otro enlace del menú
+            if (target.classList.contains('link') || target.closest('.link') || 
+                target.classList.contains('submenu') || target.closest('.submenu')) {
                 setTimeout(() => {
                     nav.classList.remove('mobile-open');
                     overlay.classList.remove('mobile-open');
@@ -42,22 +53,18 @@ function initMobileFeatures() {
                     spans[0].style.transform = 'none';
                     spans[1].style.opacity = '1';
                     spans[2].style.transform = 'none';
-                }, 300); // Pequeño delay para permitir la navegación
-            });
+                }, 300);
+            }
         });
 
-        // Asegurar que el submenú funcione en móviles
-        const servicesToggle = document.getElementById('servicesToggle');
-        if (servicesToggle) {
-            servicesToggle.addEventListener('click', function(e) {
-                e.stopPropagation();
-                // Usar la función existente toggleSubmenu() del código principal
-                toggleSubmenu();
-            });
-        }
+        // Prevenir que el menú se cierre al hacer clic dentro del submenú
+        document.addEventListener('click', function(e) {
+            if (!nav.contains(e.target) && !mobileMenuToggle.contains(e.target)) {
+                closeSubmenu();
+            }
+        });
     }
 }
-
 // Estado global de la aplicación
 const AppState = {
   currentSectionId: null,
