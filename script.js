@@ -1,11 +1,11 @@
 // ===== FUNCIONALIDAD MÓVIL MEJORADA =====
 function initMobileFeatures() {
-    // Menú hamburguesa
     const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
     const nav = document.querySelector('nav.primary');
     const overlay = document.querySelector('.mobile-overlay');
     
-    if (mobileMenuToggle) {
+    // Solo inicializar si estamos en móvil y los elementos existen
+    if (mobileMenuToggle && window.innerWidth <= 768) {
         function toggleMenu() {
             const isOpening = !nav.classList.contains('mobile-open');
             nav.classList.toggle('mobile-open');
@@ -43,16 +43,6 @@ function initMobileFeatures() {
             });
         });
     }
-    
-    // Mejorar usabilidad táctil
-    function enhanceTouchElements() {
-        const touchElements = document.querySelectorAll('.btn, .link, .carousel-nav, .carousel-control, .faq-question');
-        touchElements.forEach(el => {
-            el.style.cursor = 'pointer';
-        });
-    }
-    
-    enhanceTouchElements();
 }
 
 // Estado global de la aplicación
