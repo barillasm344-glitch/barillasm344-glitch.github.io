@@ -922,10 +922,9 @@ footer small {
 .service-list li:last-child {
   border-bottom: none;
 }
-
 /* ===== MEJORAS ESPECÍFICAS PARA MÓVILES ===== */
 
-/* Menú hamburguesa para móviles */
+/* Menú hamburguesa para móviles - OCULTO EN DESKTOP */
 .mobile-menu-toggle {
     display: none;
     flex-direction: column;
@@ -947,7 +946,7 @@ footer small {
     transition: var(--transition);
 }
 
-/* Overlay para móviles */
+/* Overlay para móviles - OCULTO EN DESKTOP */
 .mobile-overlay {
     display: none;
     position: fixed;
@@ -959,11 +958,7 @@ footer small {
     z-index: 1100;
 }
 
-.mobile-overlay.mobile-open {
-    display: block;
-}
-
-/* MEDIA QUERIES PARA DISPOSITIVOS MÓVILES */
+/* MEDIA QUERIES SOLO PARA MÓVILES - NO AFECTA DESKTOP */
 @media (max-width: 768px) {
     /* Topbar móvil */
     .topbar .container {
@@ -974,16 +969,22 @@ footer small {
         display: none;
     }
     
-    /* Mostrar menú hamburguesa */
+    /* Mostrar menú hamburguesa SOLO EN MÓVIL */
     .mobile-menu-toggle {
         display: flex;
     }
     
-    /* Navegación móvil */
+    /* OCULTAR navegación normal en móviles */
     nav.primary {
+        display: none;
+    }
+    
+    /* Mostrar navegación móvil */
+    nav.primary.mobile-open {
+        display: flex;
         position: fixed;
         top: 0;
-        left: -100%;
+        left: 0;
         width: 280px;
         height: 100vh;
         background: var(--nav-bg);
@@ -996,11 +997,11 @@ footer small {
         overflow-y: auto;
     }
     
-    nav.primary.mobile-open {
-        left: 0;
+    .mobile-overlay.mobile-open {
+        display: block;
     }
     
-    nav.primary .link {
+    nav.primary.mobile-open .link {
         padding: 16px;
         margin: 4px 0;
         border-radius: 8px;
@@ -1110,20 +1111,6 @@ footer small {
         grid-template-columns: 1fr;
     }
     
-    /* FAQ móvil */
-    .faq-question {
-        padding: 14px 16px;
-        font-size: 0.95rem;
-    }
-    
-    .faq-answer {
-        padding: 0 16px;
-    }
-    
-    .faq-answer.active {
-        padding: 14px 16px;
-    }
-    
     /* Footer móvil */
     footer .footer-inner {
         flex-direction: column;
@@ -1132,15 +1119,6 @@ footer small {
     
     .footer-col {
         min-width: 100%;
-    }
-    
-    /* Ajustes de secciones */
-    section.wrapper {
-        padding: 10px;
-    }
-    
-    .card {
-        padding: 20px;
     }
 }
 
@@ -1174,88 +1152,11 @@ footer small {
         height: 8px;
     }
     
-    input, select, textarea, button {
-        padding: 14px 12px;
-    }
-    
     .social-icons {
         justify-content: center;
     }
     
     .card {
         padding: 16px;
-    }
-}
-
-/* MEJORAS DE USABILIDAD TÁCTIL */
-@media (hover: none) and (pointer: coarse) {
-    .link, .btn, .social-icon, .carousel-nav, .carousel-control, 
-    .faq-question, .mobile-menu-toggle {
-        min-height: 44px;
-        min-width: 44px;
-    }
-    
-    .link, .faq-question {
-        display: flex;
-        align-items: center;
-    }
-    
-    /* Remover hover effects en dispositivos táctiles */
-    .card:hover {
-        transform: none;
-        box-shadow: var(--shadow);
-    }
-    
-    .service:hover .service-icon {
-        transform: none;
-        background: var(--accent-light);
-        color: var(--accent);
-    }
-    
-    .btn:hover, button:hover {
-        transform: none;
-    }
-}
-
-/* ORIENTACIÓN LANDSCAPE EN MÓVILES */
-@media (max-width: 768px) and (orientation: landscape) {
-    .hero {
-        height: auto;
-        min-height: 280px;
-    }
-    
-    nav.primary {
-        max-height: 60vh;
-        overflow-y: auto;
-    }
-    
-    .carousel {
-        height: 200px;
-    }
-}
-
-/* MEJORAS DE ACCESIBILIDAD MÓVIL */
-@media (max-width: 768px) {
-    /* Mejorar contraste */
-    .card {
-        background: rgba(255, 255, 255, 0.98);
-    }
-    
-    /* Aumentar tamaño de texto para legibilidad */
-    body {
-        font-size: 16px;
-    }
-    
-    input, select, textarea {
-        font-size: 16px;
-    }
-    
-    /* Mejorar espaciado para touch */
-    .form-group {
-        gap: 8px;
-    }
-    
-    label {
-        font-size: 0.95rem;
     }
 }
