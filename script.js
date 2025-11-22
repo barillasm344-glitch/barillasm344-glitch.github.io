@@ -1,3 +1,60 @@
+// ===== FUNCIONALIDAD MÓVIL MEJORADA =====
+function initMobileFeatures() {
+    // Menú hamburguesa
+    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+    const nav = document.querySelector('nav.primary');
+    const overlay = document.querySelector('.mobile-overlay');
+    
+    if (mobileMenuToggle) {
+        function toggleMenu() {
+            const isOpening = !nav.classList.contains('mobile-open');
+            nav.classList.toggle('mobile-open');
+            overlay.classList.toggle('mobile-open');
+            document.body.style.overflow = isOpening ? 'hidden' : '';
+            
+            // Animación del botón hamburguesa
+            const spans = mobileMenuToggle.querySelectorAll('span');
+            if (isOpening) {
+                spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+                spans[1].style.opacity = '0';
+                spans[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
+            } else {
+                spans[0].style.transform = 'none';
+                spans[1].style.opacity = '1';
+                spans[2].style.transform = 'none';
+            }
+        }
+        
+        mobileMenuToggle.addEventListener('click', toggleMenu);
+        overlay.addEventListener('click', toggleMenu);
+        
+        // Cerrar menú al hacer clic en enlaces
+        nav.querySelectorAll('.link, .submenu a').forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.remove('mobile-open');
+                overlay.classList.remove('mobile-open');
+                document.body.style.overflow = '';
+                
+                // Reset hamburguesa
+                const spans = mobileMenuToggle.querySelectorAll('span');
+                spans[0].style.transform = 'none';
+                spans[1].style.opacity = '1';
+                spans[2].style.transform = 'none';
+            });
+        });
+    }
+    
+    // Mejorar usabilidad táctil
+    function enhanceTouchElements() {
+        const touchElements = document.querySelectorAll('.btn, .link, .carousel-nav, .carousel-control, .faq-question');
+        touchElements.forEach(el => {
+            el.style.cursor = 'pointer';
+        });
+    }
+    
+    enhanceTouchElements();
+}
+
 // Estado global de la aplicación
 const AppState = {
   currentSectionId: null,
@@ -82,7 +139,7 @@ const USA_STATE_FACTORS = {
   "default": 1.1
 };
 
-// ========== NUEVO: CONFIGURACIÓN PARA ENVÍO DE EMAILS ==========
+// ========== CONFIGURACIÓN PARA ENVÍO DE EMAILS ==========
 const EMAIL_CONFIG = {
   // SERVICIO GRATUITO - Formspree (cambia por tu ID real)
   formspreeURL: 'https://formspree.io/f/mgvdnwld', // ← REEMPLAZA ESTO con tu ID de Formspree
@@ -226,7 +283,7 @@ function calculateQuote() {
   DOM.quotePreview.classList.add('show');
 }
 
-// ========== NUEVO: SISTEMA DE ENVÍO DE EMAILS MEJORADO ==========
+// ========== SISTEMA DE ENVÍO DE EMAILS MEJORADO ==========
 async function enviarCotizacionReal(datos) {
   try {
     // Preparar datos para el envío
@@ -568,6 +625,7 @@ function initApp() {
   initCarousel();
   initFAQ();
   handleScroll();
+  initMobileFeatures(); // ← AGREGADA ESTA LÍNEA
 }
 
 // Iniciar cuando el DOM esté listo
