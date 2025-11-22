@@ -922,6 +922,7 @@ footer small {
 .service-list li:last-child {
   border-bottom: none;
 }
+
 /* ===== MEJORAS ESPECÍFICAS PARA MÓVILES ===== */
 
 /* Menú hamburguesa para móviles - OCULTO EN DESKTOP */
@@ -974,17 +975,11 @@ footer small {
         display: flex;
     }
     
-    /* OCULTAR navegación normal en móviles */
+    /* Navegación normal - OCULTAR SOLO LA VISUAL, PERO MANTENER EN DOM */
     nav.primary {
-        display: none;
-    }
-    
-    /* Mostrar navegación móvil */
-    nav.primary.mobile-open {
-        display: flex;
         position: fixed;
         top: 0;
-        left: 0;
+        left: -100%;
         width: 280px;
         height: 100vh;
         background: var(--nav-bg);
@@ -995,13 +990,19 @@ footer small {
         z-index: 1200;
         box-shadow: var(--shadow-hover);
         overflow-y: auto;
+        /* NO USAR display: none - usar transform para ocultar */
+    }
+    
+    /* Mostrar navegación móvil cuando está abierta */
+    nav.primary.mobile-open {
+        left: 0;
     }
     
     .mobile-overlay.mobile-open {
         display: block;
     }
     
-    nav.primary.mobile-open .link {
+    nav.primary .link {
         padding: 16px;
         margin: 4px 0;
         border-radius: 8px;
